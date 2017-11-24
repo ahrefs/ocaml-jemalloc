@@ -1,0 +1,16 @@
+OASISFormat:  0.3
+Name:         jemalloc
+Version:      0.1
+Authors:      joris
+License:      Prop
+BuildTools:   ocamlbuild
+Plugins:      DevFiles (0.3), META (0.3)
+
+Synopsis: Bindings to jemalloc
+
+Library jemalloc
+  Path: src
+  Modules: Jemalloc
+  CClib: -ljemalloc
+  CCOpt: -g
+  CSources: jemalloc_stubs.c
