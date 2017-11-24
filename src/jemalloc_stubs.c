@@ -65,7 +65,7 @@ CAMLprim value ml_je_all_arena()
 #endif
 }
 
-CAMLprim value ml_je_mllctl_unit(value name)
+CAMLprim value ml_je_mallctl_unit(value name)
 {
    CAMLparam1(name);
    int ret = mallctl(String_val(name), NULL, 0, NULL, 0);
