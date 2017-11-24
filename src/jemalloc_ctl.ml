@@ -54,4 +54,4 @@ let get_stat name =
 
 let get_memory_stats () =
   epoch ();
-  { active = get_stat "active"; resident = get_stat "resident" ; allocated = get_stat "allocated";  mapped = get_stat "mapped" }
+  { active = get_stat "active"; resident = (try get_stat "resident" with _ -> 0); allocated = get_stat "allocated";  mapped = get_stat "mapped" }
