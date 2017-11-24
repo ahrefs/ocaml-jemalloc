@@ -28,10 +28,10 @@ static void invalid_property(value message)
 #define string_val(foo) String_val(foo)
 
 #define make_mallctl_stub(type, ctype, get_len, val_type) \
-CAMLprim value ml_je_malloc_##type(value name, value new_value)\
+CAMLprim value ml_je_mallctl_##type(value name, value new_value)\
 {\
    CAMLparam2(name, new_value);\
-   size_t old_length;\
+   size_t old_length = sizeof(ctype);\
    ctype old_data;\
    int ret;\
    if (Is_block(new_value)) {\
@@ -49,7 +49,7 @@ CAMLprim value ml_je_malloc_##type(value name, value new_value)\
 
 make_mallctl_simple(boolean, bool)
 make_mallctl_simple(int, size_t)
-make_mallctl_stub(string, char *, strlen, caml_copy_string)
+make_mallctl_stub(string, const char *, strlen, caml_copy_string)
 
 CAMLprim value ml_je_all_arena()
 {
