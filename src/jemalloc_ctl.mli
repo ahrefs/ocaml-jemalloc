@@ -9,7 +9,7 @@ val release_free_memory : unit -> unit
 
 exception Invalid_property of string
 
-(* @return version information: (human-readable string, major, minor, git version) *)
+(** @return version information: (human-readable string, major, minor, git version) *)
 val version : unit -> string * int * int * string
 
 

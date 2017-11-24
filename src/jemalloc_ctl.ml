@@ -3,7 +3,7 @@ open Printf
 let (!!) = Lazy.force
 
 exception Invalid_property of string
-let () = Callback.register_exception "Gperftools.Invalid_property" (Invalid_property "")
+let () = Callback.register_exception "Jemalloc_ctl.Invalid_property" (Invalid_property "")
 
 external mallctl_bool : string -> bool option -> bool = "ml_je_mallctl_boolean"
 external mallctl_int : string -> int option -> int = "ml_je_mallctl_int"

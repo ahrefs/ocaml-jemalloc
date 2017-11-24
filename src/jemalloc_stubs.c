@@ -16,7 +16,7 @@ static void invalid_property(value message)
   static value* exn = NULL;
   if (NULL == exn)
   {
-    exn = caml_named_value("Gperftools.Invalid_property");
+    exn = caml_named_value("Jemalloc_ctl.Invalid_property");
     assert(NULL != exn);
   }
   caml_raise_with_arg(*exn, message);
