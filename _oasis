@@ -8,9 +8,9 @@ Plugins:      DevFiles (0.3), META (0.3)
 
 Synopsis: Bindings to jemalloc
 
-Library jemalloc
+Library jemalloc_ctl
   Path: src
-  Modules: Jemalloc
+  Modules: Jemalloc_ctl
   CClib: -ljemalloc
   CCOpt: -g
   CSources: jemalloc_stubs.c
