@@ -8,7 +8,7 @@ let () = Callback.register_exception "Gperftools.Invalid_property" (Invalid_prop
 external set_memory_release_rate : float -> unit = "ml_gpt_SetMemoryReleaseRate"
 external get_memory_release_rate : unit -> float = "ml_gpt_GetMemoryReleaseRate"
 
-external mallctl_bool : string -> bool option -> bool = "ml_je_mallctl_bool"
+external mallctl_bool : string -> bool option -> bool = "ml_je_mallctl_boolean"
 external mallctl_int : string -> int option -> int = "ml_je_mallctl_int"
 external mallctl_string : string -> string option -> string = "ml_je_mallctl_string"
 external mallctl_unit : string -> unit = "ml_je_mallctl_unit"

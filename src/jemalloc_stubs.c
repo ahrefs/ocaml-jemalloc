@@ -22,7 +22,8 @@ static void invalid_property(value message)
   CAMLnoreturn;
 }
 
-#define bool_val(foo) Bool_val(foo)
+#define boolean_val(foo) Bool_val(foo)
+#define Val_boolean(foo) Val_bool(foo)
 #define int_val(foo) Int_val(foo)
 #define string_val(foo) String_val(foo)
 
@@ -44,10 +45,9 @@ CAMLprim value ml_je_malloc_##type(value name, value new_value)\
    CAMLreturn(val_type(old_data));\
 }
 
-
 #define make_mallctl_simple(type, ctype) make_mallctl_stub(type, ctype, sizeof, Val_##type)
 
-make_mallctl_simple(bool, bool)
+make_mallctl_simple(boolean, bool)
 make_mallctl_simple(int, size_t)
 make_mallctl_stub(string, char *, strlen, caml_copy_string)
 
@@ -65,7 +65,7 @@ CAMLprim value ml_je_all_arena()
 #endif
 }
 
-CAMLprim value ml_je_malloc_unit(value name)
+CAMLprim value ml_je_mllctl_unit(value name)
 {
    CAMLparam1(name);
    int ret = mallctl(String_val(name), NULL, 0, NULL, 0);
