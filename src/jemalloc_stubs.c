@@ -5,6 +5,7 @@
 #include <caml/callback.h>
 
 #include <assert.h>
+#include <stdbool.h>
 #include <string.h>
 
 #include <jemalloc/jemalloc.h>
