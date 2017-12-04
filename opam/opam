@@ -1,0 +1,30 @@
+opam-version: "1.2"
+name: "jemalloc"
+version: "0.1"
+maintainer: "joris.giovannangeli@ahrefs.com"
+authors: [ "joris giovannangeli" ]
+license: "MIT"
+tags: [ "clib:jemalloc"  ]
+build: [
+  ["oasis" "setup"]
+  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-build"]
+]
+install: ["ocaml" "setup.ml" "-install"]
+remove: [
+  ["ocamlfind" "remove" "jemalloc_ctl"]
+]
+build-test: [
+  ["oasis" "setup"]
+  ["ocaml" "setup.ml" "-configure" "--enable-tests"]
+  ["ocaml" "setup.ml" "-build"]
+  ["ocaml" "setup.ml" "-test"]
+]
+depends: [
+  ("oasis" {build & >= "0.4.7"} | "oasis-mirage" {build & >= "0.4.7"})
+  "ocamlbuild" {build}
+  "ocamlfind" {build}
+]
+depexts: [
+  [["debian"] ["libjemalloc-dev"]]
+]
