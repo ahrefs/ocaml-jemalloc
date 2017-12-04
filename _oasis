@@ -2,7 +2,7 @@ OASISFormat:  0.3
 Name:         jemalloc
 Version:      0.1
 Authors:      joris
-License:      Prop
+License:      MIT
 BuildTools:   ocamlbuild
 Plugins:      DevFiles (0.3), META (0.3)
 
