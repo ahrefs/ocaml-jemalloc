@@ -4,6 +4,9 @@ version: "0.1"
 maintainer: "joris.giovannangeli@ahrefs.com"
 authors: [ "joris giovannangeli" ]
 license: "MIT"
+homepage: "https://github.com/ahrefs/ocaml-jemalloc"
+dev-repo: "git://github.com/ahrefs/ocaml-jemalloc"
+bug-reports: "https://github.com/ahrefs/ocaml-jemalloc/issues"
 tags: [ "clib:jemalloc"  ]
 build: [
   ["oasis" "setup"]
